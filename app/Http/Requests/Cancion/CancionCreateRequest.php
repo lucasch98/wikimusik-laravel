@@ -26,8 +26,7 @@ class CancionCreateRequest extends FormRequest
     {
         return [
             'nombre' => 'required|max:255',
-            'album_id' => 'required',
-            'duracion' => 'required|date_format:H:i:s'
+            'album_id' => 'required'
         ];
     }
 }

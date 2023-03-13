@@ -32,9 +32,10 @@
                 </div>
             
                 <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Duracion</label>
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Duracion (Hor:Min:Seg)</label>
                     <div class="col-sm-10">
-                        <input type="text"  name="duracion" class="form-control" id="duracion" placeholder="Minutos:Segundos" value="{{old('duracion', $cancion->duracion)}}" >
+                        <!--<input type="text"  name="duracion" class="form-control" id="duracion" placeholder="Minutos:Segundos" value="{{old('duracion', $cancion->duracion)}}" >-->
+                        <input type="time" name="duracion"  step="1"  id="duracion" value="{{old('duracion', $cancion->duracion)}}" >
                         @error('duracion')
                             <label class="col-form-label col-sm-10">{{$message}}</label>
                         @enderror
@@ -44,10 +45,10 @@
                 <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Album</label>
                         <div class="col-sm-10">
-                            <select class="custom-select" name="album_id" >
-                                <option disabled selected>Album</option>
-                                @foreach($albumes as $album) <!--Foreach para mostrar los albumes-->
-                                    <option value="{{$album->id}}" {{($cancion->album->id ===$album->id) ? 'Selected' : ''}}>{{$album->nombre}}</option>
+                            <select class="custom-select" name="album_id">
+                                <!--<option disabled selected>Album</option>-->
+                                @foreach($albumes as $album) <!--Foreach para mostrar los albumes--> 
+                                    <option value="{{$album->id}}" {{old('album_id', $cancion->album_id) == $album->id ? "Selected" : ""}}>{{$album->nombre}}</option>                    
                                 @endforeach
                             </select>
                         </div>

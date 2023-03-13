@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/canciones/show/{id}', [CancionController::class, 'show'])->name('canciones-show');
     Route::patch('/canciones/update/{id}', [CancionController::class, 'update'])->name('canciones-update');
 
+
     Route::middleware(['admin'])->group(function(){
         //Generos
         Route::post('/generos/store', [GeneroController::class, 'store'])->name('generos-store');

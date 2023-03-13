@@ -52,7 +52,6 @@
                     </tr>   
                     @endforeach
                     </tbody>
-
                     <a href="{{route('canciones-create')}}" type="button" class="btn btn-secondary" method="GET">Crear cancion</a>
                  </table>
             </div>

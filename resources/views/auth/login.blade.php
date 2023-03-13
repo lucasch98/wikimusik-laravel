@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-           <label>WikiMusik</label>
+             <label>WikiMusik</label>
+           <img src="Imagenes/logoNavigation.png">
             </a>
         </x-slot>
 

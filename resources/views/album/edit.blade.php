@@ -42,7 +42,8 @@
                 <div class="form-group row">
                     <label for="Duracion" class="col-sm-2 col-form-label">Duracion</label>
                     <div class="col-sm-10">
-                    <input type="text"  name="duracion" class="form-control" id="duracion" value="{{old('duracion', $album->duracion)}}">
+                    <!--<input type="text"  name="duracion" class="form-control" id="duracion" value="{{old('duracion', $album->duracion)}}">-->
+                    <input type="time" name="duracion"   step="1"  id="duracion" value="{{old('duracion', $album->duracion)}}" >
                     @error('duracion')
                         <label class="col-form-label col-sm-10">{{$message}}</label>
                     @enderror
@@ -50,16 +51,16 @@
                 </div>
 
                 <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Seleccione una banda</label>
-                    <div class="col-sm-10">
-                        <select class="custom-select" name="banda_id" >
-                            <option disabled selected>Bandas</option>
-                            @foreach($bandas as $banda) <!--Foreach para mostrar las bandas-->
-                            <option value="{{$banda->id}}" {{($album->banda->id ===$banda->id) ? 'Selected' : ''}}>{{$banda->nombre}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-            </div>
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Seleccione una banda</label>
+                        <div class="col-sm-10">
+                            <select class="custom-select" name="banda_id" >
+                                <option disabled selected>Bandas</option>
+                                @foreach($bandas as $banda) <!--Foreach para mostrar las bandas-->
+                                    <option value="{{$banda->id}}" {{old('banda_id', $album->banda_id) == $banda->id ? "Selected" : ""}}>{{$banda->nombre}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                </div>
 
                 <div class="file-drop-area"> <span class="choose-file-button">Elegir imagen</span> <span class="file-message">O suelta la imagen aqui</span> <input type="file" name= 'imagen' class="file-input" accept=".jfif,.jpg,.jpeg,.png,.gif" multiple> </div>
                     <div id="divImageMediaPreview"> </div>
@@ -67,7 +68,7 @@
                     @error('imagen')
                         <label class="col-form-label col-sm-10">{{$message}}</label>
                     @enderror
-            <br>
+                <br>
                 <td>
                     <button class="btn btn-secondary">Guardar cambios</button>
                 </td>

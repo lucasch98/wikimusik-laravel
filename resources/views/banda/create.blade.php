@@ -52,7 +52,7 @@
                                 <select class="custom-select" name="genero_id" value="{{old('genero_id')}}">
                                     <option disabled selected>Generos</option>
                                     @foreach($generos as $genero) <!--Foreach para mostrar los generos-->
-                                        <option value="{{$genero->id}}">{{$genero->nombre}}</option>
+                                        <option value="{{$genero->id}}" {{old('genero_id') == $genero->id ? "selected" : ""}}>{{$genero->nombre}}</option>
                                     @endforeach
                                 </select>
                                 @error('genero_id')

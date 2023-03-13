@@ -39,7 +39,8 @@
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Duracion</label>
                     <div class="col-sm-10">
-                    <input type="text"  name="duracion"  class="form-control" id="duracion"  placeholder="Horas:Minutos:Segundos" value="{{old('duracion')}}">
+                    <!--<input type="text"  name="duracion"  class="form-control" id="duracion"  placeholder="Horas:Minutos:Segundos" value="{{old('duracion')}}">-->
+                    <input type="time" name="duracion"  step="1" id="duracionn" value="{{old('duracion')}}" >
                     @error('duracion')
                         <label class="col-form-label col-sm-10">{{$message}}</label>
                     @enderror
@@ -53,7 +54,7 @@
                             <select class="custom-select" name="banda_id" value="{{old('banda_id')}}">
                                 <option disabled selected>Bandas</option>
                                 @foreach($bandas as $banda) <!--Foreach para mostrar las bandas-->
-                                    <option value="{{$banda->id}}">{{$banda->nombre}}</option>
+                                    <option value="{{$banda->id}}" {{old('banda_id') == $banda->id ? "selected" : ""}}>{{$banda->nombre}}</option>
                                 @endforeach
                             </select>
                             @error('banda_id')
