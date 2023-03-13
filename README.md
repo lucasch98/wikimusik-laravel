@@ -4,7 +4,6 @@
 <br>
 <div class="row" align="center">
 <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" width="100">
-<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300">
 </div>
 <br>
 
@@ -28,3 +27,4 @@ El servicio web permitirá acceder a las distintas bandas, filtrando uno o más 
 Podrá ingresar un texto para buscar el nombre de la banda, elegir el género de música sobre el cual obtener las bandas que son de ese género, ingresar un texto para buscar la banda a través del nombre de algún álbum.
 
 
+<div align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300"></div>
